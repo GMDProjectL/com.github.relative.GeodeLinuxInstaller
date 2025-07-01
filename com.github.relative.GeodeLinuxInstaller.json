@@ -1,0 +1,77 @@
+{
+    "$schema": "https://github.com/flatpak/flatpak-builder/raw/refs/heads/main/data/flatpak-manifest.schema.json",
+    "id": "com.github.relative.GeodeLinuxInstaller",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.9",
+    "sdk": "org.kde.Sdk",
+    "base": "io.qt.PySide.BaseApp",
+    "base-version": "6.9",
+    "build-options": {
+        "env": {
+            "BASEAPP_REMOVE_WEBENGINE": "1",
+            "BASEAPP_DISABLE_NUMPY": "1"
+        }
+    },
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
+    ],
+    "finish-args": [
+        "--share=network",
+        "--socket=x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=home",
+        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--talk-name=org.kde.StatusNotifierHost",
+        "--talk-name=com.github.relative.GeodeLinuxInstaller"
+    ],
+    "command": "run.sh",
+    "modules": [
+        "python3-requests.json",
+        {
+            "name": "runner",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm755 run.sh /app/bin/run.sh"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "run.sh",
+                    "commands": [
+                        "python3 /app/bin/src/main.py"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "geode-linux-installer",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cp -r ./* /app/bin/",
+                "install -Dm644 com.github.relative.GeodeLinuxInstaller.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.github.relative.GeodeLinuxInstaller.metainfo.xml",
+                "install -Dm644 com.github.relative.GeodeLinuxInstaller.desktop ${FLATPAK_DEST}/share/applications/com.github.relative.GeodeLinuxInstaller.desktop",
+                "install -Dm644 com.github.relative.GeodeLinuxInstaller.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.github.relative.GeodeLinuxInstaller.png"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/GMDProjectL/geode-linux-installer.git",
+                    "branch": "main"
+                },
+                {
+                    "type": "file",
+                    "path": "com.github.relative.GeodeLinuxInstaller.metainfo.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "com.github.relative.GeodeLinuxInstaller.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.github.relative.GeodeLinuxInstaller.png"
+                }
+            ]
+        }
+    ]
+}

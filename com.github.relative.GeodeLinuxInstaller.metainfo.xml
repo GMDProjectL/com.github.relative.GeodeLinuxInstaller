@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.github.relative.GeodeLinuxInstaller</id>
+
+    <name>Geode Linux Installer</name>
+    <summary>Bringing mod support to Geometry Dash.</summary>
+
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+
+    <description>
+        <p>
+            Geode is a fan-made extension for Geometry Dash that adds mod support to the game. Browse from an in-game list to seamlessly download mods on Linux!
+        </p>
+    </description>
+
+    <launchable type="desktop-id">com.github.relative.GeodeLinuxInstaller.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://github.com/GMDProjectL/geode-linux-installer/raw/main/assets/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+</component>
