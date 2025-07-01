@@ -6,6 +6,6 @@ Name=Geode Linux Installer
 Comment=Bringing mod support to Geometry Dash.
 Categories=Utility;KDE;
 
-Icon=com.github.relative.GeodeLinuxInstaller
+Icon=org.geode.Installer
 Exec=run.sh
 Terminal=false

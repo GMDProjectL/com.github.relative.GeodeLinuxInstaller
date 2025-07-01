@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/flatpak/flatpak-builder/raw/refs/heads/main/data/flatpak-manifest.schema.json",
-    "id": "com.github.relative.GeodeLinuxInstaller",
+    "id": "org.geode.Installer",
     "runtime": "org.kde.Platform",
     "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
@@ -53,9 +53,9 @@
             "buildsystem": "simple",
             "build-commands": [
                 "cp -r ./* /app/bin/",
-                "install -Dm644 com.github.relative.GeodeLinuxInstaller.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.github.relative.GeodeLinuxInstaller.metainfo.xml",
-                "install -Dm644 com.github.relative.GeodeLinuxInstaller.desktop ${FLATPAK_DEST}/share/applications/com.github.relative.GeodeLinuxInstaller.desktop",
-                "install -Dm644 com.github.relative.GeodeLinuxInstaller.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.github.relative.GeodeLinuxInstaller.png",
+                "install -Dm644 org.geode.Installer.metainfo.xml ${FLATPAK_DEST}/share/metainfo/org.geode.Installer.metainfo.xml",
+                "install -Dm644 org.geode.Installer.desktop ${FLATPAK_DEST}/share/applications/org.geode.Installer.desktop",
+                "install -Dm644 org.geode.Installer.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/org.geode.Installer.png",
                 "install -Dm644 ./assets/screenshot.png ${FLATPAK_DEST}/share/app-info/media/screenshot.png"
             ],
             "sources": [
@@ -66,15 +66,15 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.github.relative.GeodeLinuxInstaller.metainfo.xml"
+                    "path": "org.geode.Installer.metainfo.xml"
                 },
                 {
                     "type": "file",
-                    "path": "com.github.relative.GeodeLinuxInstaller.desktop"
+                    "path": "org.geode.Installer.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.github.relative.GeodeLinuxInstaller.png"
+                    "path": "org.geode.Installer.png"
                 }
             ]
         }
