@@ -11,6 +11,9 @@
     <description>
         <p>
             Geode is a fan-made extension for Geometry Dash that adds mod support to the game. Browse from an in-game list to seamlessly download mods on Linux!
+
+            **Heads up:** this installer requires broad filesystem access to detect Steam installations
+            and game libraries that may be located on external drives or custom mount points.
         </p>
     </description>
 

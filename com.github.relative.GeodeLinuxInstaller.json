@@ -17,13 +17,17 @@
     ],
     "finish-args": [
         "--share=network",
-        "--socket=x11",
+        "--share=ipc",
         "--socket=wayland",
+        "--socket=fallback-x11",
         "--device=dri",
         "--filesystem=home",
+        "--filesystem=/run/media:ro",
+        "--filesystem=/media:ro",
+        "--filesystem=/mnt:ro",
+        "--filesystem=host-os:ro",
         "--talk-name=org.kde.StatusNotifierWatcher",
-        "--talk-name=org.kde.StatusNotifierHost",
-        "--talk-name=com.github.relative.GeodeLinuxInstaller"
+        "--talk-name=org.kde.StatusNotifierHost"
     ],
     "command": "run.sh",
     "modules": [
@@ -51,13 +55,14 @@
                 "cp -r ./* /app/bin/",
                 "install -Dm644 com.github.relative.GeodeLinuxInstaller.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.github.relative.GeodeLinuxInstaller.metainfo.xml",
                 "install -Dm644 com.github.relative.GeodeLinuxInstaller.desktop ${FLATPAK_DEST}/share/applications/com.github.relative.GeodeLinuxInstaller.desktop",
-                "install -Dm644 com.github.relative.GeodeLinuxInstaller.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.github.relative.GeodeLinuxInstaller.png"
+                "install -Dm644 com.github.relative.GeodeLinuxInstaller.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.github.relative.GeodeLinuxInstaller.png",
+                "install -Dm644 ./assets/screenshot.png ${FLATPAK_DEST}/share/app-info/media/screenshot.png"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/GMDProjectL/geode-linux-installer.git",
-                    "branch": "main"
+                    "commit": "19cb5d630e598a019ae5912891f4c2458efb3bf3"
                 },
                 {
                     "type": "file",
