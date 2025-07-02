@@ -62,7 +62,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/GMDProjectL/geode-linux-installer.git",
-                    "commit": "19cb5d630e598a019ae5912891f4c2458efb3bf3"
+                    "commit": "e04d920e9494df6a81b23725a114ec921335c3f6"
                 },
                 {
                     "type": "file",
